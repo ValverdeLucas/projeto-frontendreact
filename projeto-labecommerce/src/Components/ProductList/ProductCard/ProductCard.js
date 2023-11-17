@@ -1,16 +1,13 @@
 import React from 'react'
-import { Container, ProductContainer, TextContainer, AdicionarButton } from './ProductCardStyle'
+import { Container, ImageProduct, TextContainer, AdicionarButton } from './ProductCardStyle'
 
-function ProductCard() {
+function ProductCard(props) {
     return (
             <Container>
-                <ProductContainer>
-                    <p>ProductCard</p>
-                </ProductContainer>
-
+                <ImageProduct src={props.product.image} alt=""/>
                 <TextContainer>
-                    <p>Nome do Produto</p>
-                    <p>Valor</p>
+                    <p>{props.product.name}</p>
+                    <p>{props.product.value}</p>
                 </TextContainer>
                 <AdicionarButton>Adicionar ao Carrinho</AdicionarButton>
             </Container>

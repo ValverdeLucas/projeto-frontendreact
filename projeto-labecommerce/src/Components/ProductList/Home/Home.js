@@ -1,11 +1,15 @@
 import React from 'react'
 import ProductCard from '../ProductCard/ProductCard'
 import { HomeContainer, ProductContainer, FilterContainer } from './HomeStyle'
+import products from "../../../assets/productsList.js"
 
 function Home() {
+
+    console.log(products[0])
+
     return (
         <HomeContainer>
-            
+
             <FilterContainer>
                 <p>Quantidade de Produtos:</p>
                 <label>Ordenação:
@@ -18,13 +22,16 @@ function Home() {
                 </label>
             </FilterContainer>
 
-            <ProductContainer>
-                <ProductCard>
-                </ProductCard>
-                <ProductCard>
-                </ProductCard>
-                <ProductCard>
-                </ProductCard>
+            <ProductContainer >
+                {products
+                    .map((product) => {
+                        return (
+                            <ProductCard
+                                key={product.id}
+                                product={product}
+                            />
+                        );
+                    })}
             </ProductContainer>
         </HomeContainer>
     )

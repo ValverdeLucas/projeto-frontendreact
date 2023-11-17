@@ -1,5 +1,6 @@
 import React from 'react'
 import { Container, InputWrapper, Filter } from "./FiltersStyle"
+import productList from "../../assets/productsList"
 
 function Filters() {
     return (

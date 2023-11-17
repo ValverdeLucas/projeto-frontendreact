@@ -1,6 +1,7 @@
 import React from 'react'
 import Items from "../Items/Items.js"
 import { CartContainer } from './CartStyle.js'
+import productList from "../../../assets/productsList.js"
 
 function Cart() {
     return (
