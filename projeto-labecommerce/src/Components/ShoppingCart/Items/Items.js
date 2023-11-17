@@ -1,8 +1,14 @@
 import React from 'react'
+import { ItemsContainer } from './ItemsStyle.js'
 
 function Items(){
     return(
-        <p>Items</p>
+        <div>
+        <ItemsContainer>
+        <p>x0 Nome do Produto</p>
+        <button>Remover</button>
+        </ItemsContainer>
+        </div>
     )
 }
 
