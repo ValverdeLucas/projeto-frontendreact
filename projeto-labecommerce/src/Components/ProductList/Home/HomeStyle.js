@@ -13,7 +13,7 @@ display: flex;
 flex-direction: row;
 gap: 32px;
 width: 100%;
-justify-content: space-between;
+justify-content: space-evenly;
 flex-wrap: wrap;
 `
 

@@ -7,7 +7,7 @@ function ProductCard(props) {
                 <ImageProduct src={props.product.image} alt=""/>
                 <TextContainer>
                     <p>{props.product.name}</p>
-                    <p>{props.product.value}</p>
+                    <p>Preço: {props.product.value}</p>
                 </TextContainer>
                 <AdicionarButton>Adicionar ao Carrinho</AdicionarButton>
             </Container>

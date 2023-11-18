@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ProductCard from '../ProductCard/ProductCard'
 import { HomeContainer, ProductContainer, FilterContainer } from './HomeStyle'
-import products from "../../../assets/productsList.js"
 
-function Home() {
+function Home(props) {
 
-    console.log(products[0])
+    const [ordination, setOrdination] = useState("")
+
+    const handleOrdination = (e) => {
+        setOrdination(e.target.value)
+        console.log(ordination)
+    }
 
     return (
         <HomeContainer>
@@ -13,7 +17,7 @@ function Home() {
             <FilterContainer>
                 <p>Quantidade de Produtos:</p>
                 <label>Ordenação:
-                    <select>
+                    <select onChange={handleOrdination}>
                         <option>Preço: 0-9</option>
                         <option>Preço: 9-0</option>
                         <option>Nome: A-Z</option>
@@ -23,7 +27,18 @@ function Home() {
             </FilterContainer>
 
             <ProductContainer >
-                {products
+                {props.products
+                    .filter((product) => {
+                        return props.minFilter ? product.value >= props.minFilter : product;
+                    })
+                    .filter((product) => {
+                        return props.maxFilter ? product.value <= props.maxFilter : product;
+                    })
+                    .filter((product) => {
+                        return product.name
+                            .toLowerCase()
+                            .includes(props.searchFilter.toLowerCase())
+                    })
                     .map((product) => {
                         return (
                             <ProductCard

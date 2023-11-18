@@ -1,12 +1,18 @@
 import React from 'react'
-import { ItemsContainer } from './ItemsStyle.js'
+import { ItemsContainer, ItemsCart } from './ItemsStyle.js'
 
-function Items(){
+function Items(props){
+
+    const itemsCarrinho = props.cart.map(item => {
+        return <ItemsCart>
+        <p>x{props.amount}</p> <li>{item}</li> <button>Remover</button>
+        </ItemsCart>
+    })
+
     return(
         <div>
         <ItemsContainer>
-        <p>x0 Nome do Produto</p>
-        <button>Remover</button>
+            {itemsCarrinho}
         </ItemsContainer>
         </div>
     )
