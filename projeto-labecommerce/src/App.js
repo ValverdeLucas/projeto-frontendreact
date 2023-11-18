@@ -26,6 +26,13 @@ const GlobalStyles = createGlobalStyle`
 `
 
 function App() {
+
+  const [minFilter, setMinFilter] = useState("")
+  const [maxFilter , setMaxFilter] = useState("")
+  const [searchFilter , setSearchFilter] = useState("")
+  const [cart , setCart] = useState("")
+  const [amount, setAmount] = useState("")
+
   return (
     <>
       <GlobalStyles />
