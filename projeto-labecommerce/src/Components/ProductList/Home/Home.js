@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 import ProductCard from '../ProductCard/ProductCard'
 import { HomeContainer, ProductContainer, FilterContainer } from './HomeStyle'
-import products from "../../../assets/productsList.js"
 
-function Home() {
+function Home(props) {
 
     const [ordination, setOrdination] = useState("")
 
@@ -28,7 +27,18 @@ function Home() {
             </FilterContainer>
 
             <ProductContainer >
-                {products
+                {props.products
+                    .filter((product) => {
+                        return props.minFilter ? product.value.includes(props.minFilter) : product;
+                    })
+                    .filter((product) => {
+                        return props.maxFilter ? product.value.includes(props.maxFilter) : product;
+                    })
+                    .filter((product) => {
+                        return product.name
+                            .toLowerCase()
+                            .includes(props.searchFilter.toLowerCase())
+                    })
                     .map((product) => {
                         return (
                             <ProductCard

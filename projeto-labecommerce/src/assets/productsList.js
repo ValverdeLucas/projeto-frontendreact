@@ -1,4 +1,5 @@
-const products = [
+const products = 
+[
     {
       id: 1,
       name: "Voyager 1",
