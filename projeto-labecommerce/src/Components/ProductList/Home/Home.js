@@ -29,10 +29,10 @@ function Home(props) {
             <ProductContainer >
                 {props.products
                     .filter((product) => {
-                        return props.minFilter ? product.value.includes(props.minFilter) : product;
+                        return props.minFilter ? product.value >= props.minFilter : product;
                     })
                     .filter((product) => {
-                        return props.maxFilter ? product.value.includes(props.maxFilter) : product;
+                        return props.maxFilter ? product.value <= props.maxFilter : product;
                     })
                     .filter((product) => {
                         return product.name

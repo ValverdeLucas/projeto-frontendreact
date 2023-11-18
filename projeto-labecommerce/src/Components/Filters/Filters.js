@@ -27,6 +27,7 @@ function Filters(props) {
                     type="number"
                     onChange={handleMinFilter}
                     value={props.minFilter}
+                    min={0}
                 ></input>
             </InputWrapper>
 
@@ -35,7 +36,9 @@ function Filters(props) {
                 <input
                     type="number"
                     onChange={handleMaxFilter}
-                    value={props.maxFilter}></input>
+                    value={props.maxFilter}
+                    min={0}
+                    ></input>
             </InputWrapper>
 
             <InputWrapper>
