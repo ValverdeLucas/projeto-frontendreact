@@ -24,6 +24,10 @@ const GlobalStyles = createGlobalStyle`
    h2{
     font-family: "Times New Roman", Times, serif;
    }
+
+   ul{
+    list-style-type: none;
+   }
 `
 //Incluir nos objetivos uma característica "Type (Onibus espacial, Satélite, Espaço Nave" e incluir um filtro
 
@@ -32,8 +36,8 @@ function App() {
   const [minFilter, setMinFilter] = useState("")
   const [maxFilter, setMaxFilter] = useState("")
   const [searchFilter, setSearchFilter] = useState("")
-  const [cart, setCart] = useState("")
-  const [amount, setAmount] = useState("")
+  const [cart, setCart] = useState(["item teste 1", "item teste 2"])
+  const [amount, setAmount] = useState("0")
 
   return (
     <>
@@ -42,7 +46,8 @@ function App() {
         <Filters
           minFilter={minFilter} setMinFilter={setMinFilter}
           maxFilter={maxFilter} setMaxFilter={setMaxFilter}
-          searchFilter={searchFilter} setSearchFilter={setSearchFilter} />
+          searchFilter={searchFilter} setSearchFilter={setSearchFilter} 
+          />
         <Home
           minFilter={minFilter} setMinFilter={setMinFilter}
           maxFilter={maxFilter} setMaxFilter={setMaxFilter}

@@ -3,20 +3,14 @@ import Items from "../Items/Items.js"
 import { CartContainer } from './CartStyle.js'
 import productList from "../../../assets/productsList.js"
 
-function Cart() {
+function Cart(props) {
     return (
         <CartContainer>
             <h2>Cart</h2>
-            <Items></Items>
-            <Items></Items>
-            <Items></Items>
-            <Items></Items>
-            <Items></Items>
-            <Items></Items>
-            <Items></Items>
-            <Items></Items>
-            <Items></Items>
-            <p>Valor total</p>
+            <Items
+                amount={props.amount} setAmount={props.setAmount}
+                cart={props.cart} setCart={props.setCart} />
+            <p>Valor total:</p>
         </CartContainer>
     )
 }
