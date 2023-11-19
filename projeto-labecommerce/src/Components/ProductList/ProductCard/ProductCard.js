@@ -4,13 +4,46 @@ import { Container, ImageProduct, TextContainer, AdicionarButton } from './Produ
 function ProductCard(props) {
 
     const handleAdicionarItem = () => {
-        const itemNoCarrinho = {
-            ...props.product, quantity:1
-        };
 
-        const carrinhoComItems = [...props.cart, itemNoCarrinho];
+        const itemNoCarrinho = {
+            ...props.product, quantity: props.product.quantity + 1
+        }
+        const carrinhoComItems = [...props.cart, itemNoCarrinho]
+
 
         props.setCart(carrinhoComItems)
+
+        // function shallowEqualityCheck(produto1, produto2) {
+        //     const chave1 = Object.keys(produto1)
+        //     const chave2 = Object.keys(produto2)
+
+        //     if (chave1.lenght !== chave2.lenght) {
+        //         return false;
+        //     }
+
+        //     for (const chave of chave1) {
+        //         if (produto1[chave] !== produto2[chave]) {
+        //             return false
+        //         }
+        //     }
+
+        //     return true
+        // }
+
+        // if (carrinhoComItems.some((item) => shallowEqualityCheck(item, itemNoCarrinho)) === true) {
+
+
+
+        // } else {
+
+        //     const itemNoCarrinho = {
+        //         ...props.product, quantity: 1
+        //     };
+
+
+
+        // }
+
 
         // const aumentarQuantidade = (item) => {
         //     const carrinhoFiltrado = props.cart((item) => {
@@ -24,6 +57,8 @@ function ProductCard(props) {
         //     props.setCart(carrinhoComItems)
         // }
         console.log(carrinhoComItems)
+        // console.log(carrinhoComItems.some((item) => shallowEqualityCheck(item, itemNoCarrinho)))
+
     }
 
     return (
