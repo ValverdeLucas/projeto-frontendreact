@@ -25,7 +25,7 @@ const GlobalStyles = createGlobalStyle`
     font-family: "Times New Roman", Times, serif;
    }
 
-   ul{
+   li{
     list-style-type: none;
    }
 `
@@ -36,7 +36,7 @@ function App() {
   const [minFilter, setMinFilter] = useState("")
   const [maxFilter, setMaxFilter] = useState("")
   const [searchFilter, setSearchFilter] = useState("")
-  const [cart, setCart] = useState(["item teste 1", "item teste 2"])
+  const [cart, setCart] = useState([])
   const [amount, setAmount] = useState("0")
 
   return (
