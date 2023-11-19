@@ -42,6 +42,8 @@ function Home(props) {
                     .map((product) => {
                         return (
                             <ProductCard
+                                cart={props.cart}
+                                setCart={props.setCart}
                                 key={product.id}
                                 product={product}
                             />

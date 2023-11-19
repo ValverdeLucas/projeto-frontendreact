@@ -1,20 +1,27 @@
 import React from 'react'
 import { ItemsContainer, ItemsCart } from './ItemsStyle.js'
 
-function Items(props){
+function Items(props) {
+
+    const handleRemoverItem = (itemRemover) => {
+        const carrinhoFiltrado = props.cart.filter((item) => {
+            if (item !== itemRemover) {
+                return item;
+            }
+        });
+        props.setCart(carrinhoFiltrado)
+    }
 
     const itemsCarrinho = props.cart.map(item => {
         return <ItemsCart>
-        <p>x{props.amount}</p> <li>{item}</li> <button>Remover</button>
+            <p>x{item.quantity}</p> <li>{item.name}</li> <button onClick={()=> handleRemoverItem (item)}>Remover</button>
         </ItemsCart>
     })
 
-    return(
-        <div>
+    return (
         <ItemsContainer>
             {itemsCarrinho}
         </ItemsContainer>
-        </div>
     )
 }
 
