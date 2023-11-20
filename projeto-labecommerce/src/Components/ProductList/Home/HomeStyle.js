@@ -3,9 +3,11 @@ import styled from "styled-components";
 export const HomeContainer = styled.div`
 display: flex;
 flex-direction: column;
-padding:12px;
+gap: 8px;
 width: 70%;
 height: 80%;
+border: 5px solid transparent;
+opacity: 100%;
 `
 
 export const ProductContainer = styled.div`
@@ -21,6 +23,10 @@ export const FilterContainer = styled.div`
 display: flex;
 justify-content: space-between;
 width:100%;
+align-self: center;
 padding: 12px;
+background-color: white;
+opacity: 85%;
+border-radius: 15px;
 `
 

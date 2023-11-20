@@ -59,6 +59,7 @@ function Home(props) {
                     return 0
                 })
                 break;
+
             default:
                 props.products.sort(function (a, b) {
                     if (a.id < b.id) {
@@ -69,15 +70,14 @@ function Home(props) {
                     }
                     return 0
                 })        }
-        console.log(ordination)
     }
 
     return (
         <HomeContainer>
 
             <FilterContainer>
-                <p>Quantidade de Produtos:</p>
-                <label>Ordenação:
+                <h2>Lista de Produtos</h2>
+                <h4>Ordenação:   
                     <select onChange={(e) => setOrdination(e.target.value)}>
                         <option value="Padrão">Padrão</option>
                         <option value="Preço: 0-9">Preço: 0-9</option>
@@ -85,7 +85,7 @@ function Home(props) {
                         <option value="Nome: A-Z">Nome: A-Z</option>
                         <option value="Nome: Z-A">Nome: Z-A</option>
                     </select>
-                </label>
+                </h4>
             </FilterContainer>
 
             <ProductContainer >
