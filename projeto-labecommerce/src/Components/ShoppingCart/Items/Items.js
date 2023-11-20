@@ -1,20 +1,34 @@
-import React from 'react'
-import { ItemsContainer, ItemsCart } from './ItemsStyle.js'
+import React, { useState } from 'react'
+import { ItemsContainer, ItemsCart, RemoverItem, nomeItems} from './ItemsStyle.js'
 
 function Items(props) {
 
     const handleRemoverItem = (itemRemover) => {
+
+        const removerQuantidade = [...props.cart]
+
         const carrinhoFiltrado = props.cart.filter((item) => {
             if (item !== itemRemover) {
                 return item;
             }
-        });
-        props.setCart(carrinhoFiltrado)
+        })
+
+        if (itemRemover.quantity === 1) {
+
+            props.setCart(carrinhoFiltrado)
+        }
+
+        if (itemRemover.quantity > 1) {
+            itemRemover.quantity -= 1;
+            props.setCart(removerQuantidade)
+        };
     }
 
     const itemsCarrinho = props.cart.map(item => {
         return <ItemsCart>
-            <p>x{item.quantity}</p> <li>{item.name}</li> <button onClick={()=> handleRemoverItem (item)}>Remover</button>
+            <p><strong>x{item.quantity}</strong></p>
+            <nomeItems>{item.name}</nomeItems>
+            <RemoverItem onClick={() => handleRemoverItem(item)}>Remover</RemoverItem>
         </ItemsCart>
     })
 

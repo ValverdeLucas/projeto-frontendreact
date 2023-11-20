@@ -6,11 +6,17 @@ flex-direction: column;
 gap:8px;
 border: 1px solid #000;
 justify-content: space-between;
-width: 22.5%;
+width: 20%;
 height: 70%;
 padding: 8px;
+border: 5px solid transparent;
+background-color: #fcfbfe;
+opacity: 90%;
+border-radius: 15px;
 `
 
-export const ValorTotal = styled.p`
+export const ValorTotal = styled.h4`
 /* justify-self: end */
 `
+
+
