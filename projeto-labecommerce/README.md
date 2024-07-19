@@ -1,6 +1,6 @@
 Labecommerce - Space Station Shop, a loja para você viajar pelo espaço!
 
-surge:  spacestationshop-labecommerce.surge.sh
+VERCEL: https://projeto-frontendreact-pi-puce.vercel.app
 
 Funcionalidades:
 
